@@ -1,0 +1,6 @@
+.popup__img-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 90px auto 64px;
+}

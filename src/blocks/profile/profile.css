@@ -1,0 +1,31 @@
+.profile {
+  display: grid;
+  max-width: 880px;
+  grid-template-areas:
+  "profile__avatar profile__name profile__edit-button profile__add-button"
+  "profile__avatar profile__job profile__edit-button profile__add-button";
+  grid-template-columns: 150px 312px 1fr 1fr;
+  grid-template-rows: 72px 1fr;
+  color: white;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .profile {
+    grid-template-areas:
+    "profile__avatar profile__avatar profile__avatar"
+    "null profile__name profile__edit-button"
+    "profile__job profile__job profile__job"
+    "profile__add-button profile__add-button profile__add-button";
+    grid-template-columns: 1fr 294px 1fr;
+    grid-template-rows: 146px 1fr 1fr 76px;
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    grid-template-columns: 1fr 189px 1fr;
+    max-width: 282px;
+  }
+}
