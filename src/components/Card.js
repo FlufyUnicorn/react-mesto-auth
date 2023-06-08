@@ -8,6 +8,7 @@ function Card(props) {
   const cardLikeButtonClassName = (
     `card__like-button ${isLiked && 'card__like-button_active'}`
   )
+
   return (
     <li className="card">
       {isOwn && <button className="card__delete-button" type="button" onClick={() => props.onCardDelete(props.card)}/>}

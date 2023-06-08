@@ -17,17 +17,17 @@ function InfoToolTip(props) {
       props.onClose()
     }
   }
-  console.log(props.error.message, 'err mess')
+
   return (
     <div className={`popup ${props.isOpen ? 'popup_opened' : ''}`}>
       <div className="popup__container">
         <button className="popup__close-button" type="button" onClick={closePopup}/>
         {props.isOk && (<>
-          <img src={ok} alt="Регистрация прошла успешно" className='popup__img'/>
+          <img src={ok} alt="Регистрация прошла успешно" className='popup__icon'/>
           <p className='popup__text'>Вы успешно зарегистрировались!</p>
         </>)}
         {!props.isOk && (<>
-          <img src={not_ok} alt="Что-то пошло не так" className='popup__img'/>
+          <img src={not_ok} alt="Что-то пошло не так" className='popup__icon'/>
           <p className='popup__text'>{props.error.message ?? 'Что-то пошло не так!\n' +
           'Попробуйте ещё раз.'}</p>
         </>)}

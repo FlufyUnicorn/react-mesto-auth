@@ -22,7 +22,6 @@ function Header(props) {
                     props.logout()
                     togglePopup()
                   }}>
-              Выйти
             </Link>
           </div>
         )
@@ -36,6 +35,14 @@ function Header(props) {
                                            className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}
                                            onClick={props.logout}>
               Выйти
+            </Link>}/>
+            <Route path='/sign-in' element={<Link to='/sign-up'
+                                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}>
+              Регистрация
+            </Link>}/>
+            <Route path='/sign-up' element={<Link to='/sign-in'
+                                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}>
+              Войти
             </Link>}/>
           </Routes>
         </div>

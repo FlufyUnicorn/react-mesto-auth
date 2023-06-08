@@ -1,5 +1,5 @@
 import {useFormValidation} from "../hooks/useFormValidation";
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import InfoToolTip from "./InfoToolTip";
 import React from 'react';
 
@@ -8,8 +8,6 @@ function Register(props) {
     email: '',
     password: ''
   })
-
-  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -21,14 +19,13 @@ function Register(props) {
     if (props.loggedIn) resetForm()
   }, [props.loggedIn])
 
-  console.log(props.error, 'err register')
   return (
     <div>
       <div className='auth'>
         <div className='auth__wrapper'>
           <h1 className='auth__title'>Регистрация</h1>
-          <form className='auth__form'>
-            <label className="popup__input-label">
+          <form className='popup__form'>
+            <label className="popup__label">
               <input type="email"
                      className='auth__input'
                      placeholder='Email'
@@ -38,7 +35,7 @@ function Register(props) {
                      onChange={handleChange}/>
               <span className={`email-input-error popup__input-error-text ${isValid ? '' : 'popup__input-error-text_active'}`}>{errors.email}</span>
             </label>
-            <label className="popup__input-label">
+            <label className="popup__label">
               <input type="password"
                      className='auth__input'
                      placeholder='Пароль'

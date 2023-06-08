@@ -6,6 +6,7 @@
   width: 100%;
   color: #CCCCCC;
   margin-top: 30px;
+  position: relative;
 }
 
 .auth__input::placeholder {
