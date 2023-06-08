@@ -11,6 +11,7 @@
   padding: 14px 0;
   cursor: pointer;
   transition: .3s ease;
+  margin-top: 216px;
 }
 
 .auth__button:hover {

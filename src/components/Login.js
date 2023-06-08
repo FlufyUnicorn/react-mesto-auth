@@ -34,7 +34,7 @@ function Login(props) {
       <div className='auth'>
         <div className='auth__wrapper'>
           <h1 className='auth__title'>Вход</h1>
-          <form className='popup__form'>
+          <form className='popup__form' onSubmit={handleSubmit}>
             <label className="popup__label">
               <input type='email'
                      name='email'
@@ -57,9 +57,9 @@ function Login(props) {
               <span
                 className={`password-input-error popup__input-error-text ${isValid ? '' : 'popup__input-error-text_active'}`}>{errors.password}</span>
             </label>
+            <button className={`auth__button ${isValid ? '' : 'auth__button_disabled'}`} disabled={!isValid}>Войти</button>
           </form>
         </div>
-        <button className={`auth__button ${isValid ? '' : 'auth__button_disabled'}`} disabled={!isValid} onClick={handleSubmit}>Войти</button>
       </div>
       <InfoToolTip isOk={props.isOk} isOpen={props.isOpen} error={props.error} onClose={props.onClose} />
     </div>
