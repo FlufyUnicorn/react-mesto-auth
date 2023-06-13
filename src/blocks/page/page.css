@@ -9,4 +9,8 @@
   align-self: center;
   font-family: 'Inter', sans-serif;
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

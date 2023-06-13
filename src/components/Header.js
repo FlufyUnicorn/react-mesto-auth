@@ -31,17 +31,20 @@ function Header(props) {
         <div className='header__wrapper'>
           {props.email && <p className='header__text'>{props.email}</p>}
           <Routes>
-            <Route path='/' element={<Link to='/sign-in'
-                                           className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}
-                                           onClick={props.logout}>
+            <Route path='/'
+                   element={<Link to='/sign-in'
+                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}
+                                  onClick={props.logout}>
               Выйти
             </Link>}/>
-            <Route path='/sign-in' element={<Link to='/sign-up'
-                                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}>
+            <Route path='/sign-in'
+                   element={<Link to='/sign-up'
+                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}>
               Регистрация
             </Link>}/>
-            <Route path='/sign-up' element={<Link to='/sign-in'
-                                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}>
+            <Route path='/sign-up'
+                   element={<Link to='/sign-in'
+                                  className={`header__link ${location.pathname === '/' ? 'header__link_invisible' : ''}`}>
               Войти
             </Link>}/>
           </Routes>

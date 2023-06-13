@@ -17,6 +17,7 @@ function InfoToolTip(props) {
       props.onClose()
     }
   }
+  console.log(props.isOpen, 'isOpen')
 
   return (
     <div className={`popup ${props.isOpen ? 'popup_opened' : ''}`}>

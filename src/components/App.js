@@ -15,6 +15,7 @@ import {api} from "../utils/Api";
 import {Route, Routes, useNavigate, Navigate} from 'react-router-dom';
 import {register,login,checkToken} from "../utils/auth";
 import ConfirmPopup from "./ConfirmPopup";
+import InfoToolTip from "./InfoToolTip";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false)
@@ -173,6 +174,7 @@ function App() {
       console.warn(e)
       setIsOk(false)
       setIsInfoTooltipOpen(true)
+      console.log(isInfoTooltipOpen, 'infotool')
       setError(e)
     }
   }
@@ -257,6 +259,7 @@ return (
         <ImagePopup isOpen={isImageOpen} onClose={closeAllPopups} card={selectedCard}/>
         <ConfirmPopup id={'delete'} title={'Вы уверены?'} isOpen={isDeletePopupOpen} onClose={closeAllPopups} buttonText={"Да"} onSubmit={handleCardDelete} card={removedCardId}/>
         <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar}/>
+        <InfoToolTip isOk={isOk} isOpen={isInfoTooltipOpen} onClose={closeAllPopups} error={error}/>
       </div>
     </div>
   </ CurrentUserContext.Provider>
